@@ -1,6 +1,9 @@
 <?php 
-//session_start();
+session_start();
 require "includes/header.php"; 
+if(isset($_SESSION['nombre'])&&isset($_SESSION['apellidos'])){
+  header('Location: index.php');
+}
 ?>
 
 <main class="form-signin w-50 m-auto">
