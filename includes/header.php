@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -47,7 +46,7 @@
             <?php echo $_SESSION['nombre']." ".$_SESSION['apellidos'];?>
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Logout</a></li>
+            <li><a class="dropdown-item" href="cerrar_sesion.php">Logout</a></li>
           </ul>
         </li>
         <?php endif;?>
