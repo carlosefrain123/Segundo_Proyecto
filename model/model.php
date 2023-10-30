@@ -30,5 +30,18 @@
                 }
             }
         }
+        public function registroProductos($codigo,$nombre,$precio,$stock){
+            $stament=$this->PDO->prepare("INSERT INTO productos (id, codigo,nombre,precio,stock) VALUES(null,:codigo,:nombre,:precio,:stock)");
+            $stament->bindParam(":codigo",$codigo);
+            $stament->bindParam(":nombre",$nombre);
+            $stament->bindParam(":precio",$precio);
+            $stament->bindParam(":stock",$stock);
+            return($stament->execute())?$this->PDO->lastInsertId():false;
+        }
+        public function show($id){
+            $stament=$this->PDO->prepare("SELECT * FROM productos WHERE id=:id LIMIT 1");
+            $stament->bindParam(":id",$id);
+            return($stament->execute())?$stament->fetch():false;
+        }
     }
 ?>
