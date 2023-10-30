@@ -17,5 +17,9 @@
             $id=$this->model->show($id);
             return ($id!=false)?$id:header("Location: crear.php");
         }
+        public function mostrarProd(){
+            $idmostrarprod=$this->model->listaProductos();
+            return ($idmostrarprod!=false)?$idmostrarprod:header("Location: crear.php");
+        }
     }
 ?>

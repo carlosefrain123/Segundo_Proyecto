@@ -43,7 +43,7 @@
               </a>
               <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="/proyectb/productos/crear.php">Crear Productos</a></li>
-                <li><a class="dropdown-item" href="#">Lista de Productos</a></li>
+                <li><a class="dropdown-item" href="/proyectb/productos/listaProd.php">Lista de Productos</a></li>
               </ul>
             </li>
             <li class="nav-item dropdown">

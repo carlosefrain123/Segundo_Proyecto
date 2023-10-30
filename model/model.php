@@ -43,5 +43,9 @@
             $stament->bindParam(":id",$id);
             return($stament->execute())?$stament->fetch():false;
         }
+        public function listaProductos(){
+            $stament=$this->PDO->prepare("SELECT * FROM productos");
+            return($stament->execute())?$stament->fetchAll():false;
+        }
     }
 ?>
