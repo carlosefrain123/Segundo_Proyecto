@@ -6,6 +6,7 @@ $obj = new controller();
 $dato = $obj->show($_GET['id']);
 ?>
 <main>
+    <h1 class="text-center">Visualizar Producto</h1>
     <table class="table container-fluid">
         <thead>
             <tr>

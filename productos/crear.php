@@ -2,7 +2,9 @@
   session_start();
   require_once('C:/xampp/htdocs/proyectb/includes/header.php');
 ?>
+
 <form class="container-fluid" method="post" action="guardar.php">
+  <h1 class="text-center">Agregar Producto</h1>
   <div class="mb-3">
     <label for="codigo" class="form-label">Código de barras:</label>
     <input name="codigo" type="text" class="form-control" required id="codigo" aria-describedby="codigo">

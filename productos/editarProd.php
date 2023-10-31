@@ -7,6 +7,7 @@ $dato = $obj->show($_GET['id']);
 ?>
 <main>
     <form action="editarP.php" method="post">
+        <h1 class="text-center">Editar Producto</h1>
         <div class="mb-3 row">
             <label for="email" class="col-sm-2 col-form-label">ID</label>
             <div class="col-sm-10">
