@@ -47,5 +47,15 @@
             $stament=$this->PDO->prepare("SELECT * FROM productos");
             return($stament->execute())?$stament->fetchAll():false;
         }
+        public function editarProductos($id, $codigo, $nombre, $precio, $stock){
+            $stament = $this->PDO->prepare("UPDATE productos SET codigo=:codigo, nombre=:nombre, precio=:precio, stock=:stock WHERE id=:id");
+            $stament->bindParam(":id", $id);
+            $stament->bindParam(":codigo", $codigo);
+            $stament->bindParam(":nombre", $nombre);
+            $stament->bindParam(":precio", $precio);
+            $stament->bindParam(":stock", $stock);
+            return ($stament->execute()) ? $id : false;
+        }
+        
     }
 ?>

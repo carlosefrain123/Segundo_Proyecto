@@ -25,7 +25,10 @@ $dato = $obj->mostrarProd();
                     <td><?= $row[2] ?></td>
                     <td><?= $row[3] ?></td>
                     <td><?= $row[4] ?></td>
-                    <td><a href="visualizar.php?id=<?= $row[0] ?>" class="btn btn-success">Vista</a></td>
+                    <td>
+                        <a href="visualizar.php?id=<?= $row[0] ?>" class="btn btn-success">Vista</a>
+                        <a href="editarProd.php?id=<?= $row[0] ?>" class="btn btn-primary">Editar</a>
+                    </td>
                 </tr>
             <?php endforeach; ?>
         <?php endif; ?>

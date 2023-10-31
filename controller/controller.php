@@ -21,5 +21,9 @@
             $idmostrarprod=$this->model->listaProductos();
             return ($idmostrarprod!=false)?$idmostrarprod:header("Location: crear.php");
         }
+        public function editarProd($id,$codigo,$nombre,$precio,$stock){
+            $ideditarprod=$this->model->editarProductos($id,$codigo,$nombre,$precio,$stock);
+            return ($ideditarprod!=false)?header("Location: listaProd.php"):header("Location: listaProd");
+        }
     }
 ?>
