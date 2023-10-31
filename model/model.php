@@ -56,6 +56,10 @@
             $stament->bindParam(":stock", $stock);
             return ($stament->execute()) ? $id : false;
         }
-        
+        public function eliminarProductos($id){
+            $stament=$this->PDO->prepare("DELETE FROM productos WHERE id=$id");
+            $stament->bindParam(":id", $id);
+            return($stament->execute()) ? true:false;
+        }
     }
 ?>

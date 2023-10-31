@@ -18,7 +18,7 @@ $dato = $obj->mostrarProd();
     </thead>
     <tbody>
         <?php if ($dato) : ?>
-            <?php foreach($dato as $row): ?>
+            <?php foreach ($dato as $row) : ?>
                 <tr>
                     <td><?= $row[0] ?></td>
                     <td><?= $row[1] ?></td>
@@ -28,6 +28,29 @@ $dato = $obj->mostrarProd();
                     <td>
                         <a href="visualizar.php?id=<?= $row[0] ?>" class="btn btn-success">Vista</a>
                         <a href="editarProd.php?id=<?= $row[0] ?>" class="btn btn-primary">Editar</a>
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal<?=$row[0]?>">
+                            Eliminar
+                        </button>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModal<?=$row[0]?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="exampleModalLabel">¿Desea Eliminar el Producto?</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        El producto eliminado, ya no podrá ser recuperado
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-success" data-bs-dismiss="modal">Cancelar</button>
+                                        <a type="button" class="btn btn-danger" href="eliminarP.php?id=<?=$row[0]?>">Eliminar</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </td>
                 </tr>
             <?php endforeach; ?>

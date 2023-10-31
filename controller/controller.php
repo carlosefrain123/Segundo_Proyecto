@@ -25,5 +25,9 @@
             $ideditarprod=$this->model->editarProductos($id,$codigo,$nombre,$precio,$stock);
             return ($ideditarprod!=false)?header("Location: listaProd.php"):header("Location: listaProd");
         }
+        public function eliminarProd($id){
+            $ideliminarprod=$this->model->eliminarProductos($id);
+            return($ideliminarprod!=false)?header("Location: listaProd.php"):header("Location: listaProd");;
+        }
     }
 ?>
