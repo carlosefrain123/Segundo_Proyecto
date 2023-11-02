@@ -6,6 +6,7 @@
             $con=new db();
             $this->PDO = $con->conexion();
         }
+        /**Usuario */
         public function registroUsuarios($nombre,$apellidos,$email,$password){
             $passwordHash=password_hash($password,PASSWORD_DEFAULT);
             $stament=$this->PDO->prepare("INSERT INTO usuarios(id,nombre,apellidos,email,password) VALUES(null,:nombre,:apellidos,:email,:password)");
@@ -30,6 +31,11 @@
                 }
             }
         }
+        public function listaUsuarios(){
+            $stament=$this->PDO->prepare("SELECT * FROM usuarios");
+            return($stament->execute())?$stament->fetchAll():false;
+        }
+        /**Productos */
         public function registroProductos($codigo,$nombre,$precio,$stock){
             $stament=$this->PDO->prepare("INSERT INTO productos (id, codigo,nombre,precio,stock) VALUES(null,:codigo,:nombre,:precio,:stock)");
             $stament->bindParam(":codigo",$codigo);

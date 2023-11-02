@@ -13,6 +13,11 @@
             $idRegistrarprod=$this->model->registroProductos($codigo,$nombre, $precio,$stock);
             return ($idRegistrarprod!=false)?header("Location: visualizar.php?id=".$idRegistrarprod):header("Location:crear.php");
         }
+        public function listaUs(){
+            $idlistaUs=$this->model->listaUsuarios();
+            return($idlistaUs!=false)?$idlistaUs:header("Location: listaUs.php");
+        }
+        /**Productos */
         public function show($id){
             $id=$this->model->show($id);
             return ($id!=false)?$id:header("Location: crear.php");

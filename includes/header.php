@@ -48,6 +48,14 @@
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                USUARIOS
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="/proyectb/usuarios/listaUs.php">Lista de Usuarios</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 <?php echo $_SESSION['nombre'] . " " . $_SESSION['apellidos']; ?>
               </a>
               <ul class="dropdown-menu">
