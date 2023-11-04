@@ -14,6 +14,7 @@ $dato = $obj->listaUs();
                 <th>Nombre</th>
                 <th>Apellidos</th>
                 <th>Email</th>
+                <th>Función</th>
             </tr>
         </thead>
         <tbody>
@@ -24,6 +25,32 @@ $dato = $obj->listaUs();
                         <td><?= $row[1] ?></td>
                         <td><?= $row[2] ?></td>
                         <td><?= $row[3] ?></td>
+                        <td>
+                            <a class="btn btn-primary" href="mostrarUs.php?id=<?= $row[0] ?>">Ver</a>
+                            <a class="btn btn-success" href="editarUs.php?id=<?= $row[0] ?>">Editar</a>
+                            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal<?= $row[0] ?>">
+                                Eliminar
+                            </button>
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="exampleModal<?= $row[0] ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h1 class="modal-title fs-5" id="exampleModalLabel">¿Desea Eliminar el Usuario?</h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            El usuario eliminado, ya no podrá ser recuperado
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-success" data-bs-dismiss="modal">Cancelar</button>
+                                            <a type="button" class="btn btn-danger" href="eliminarP.php?id=<?= $row[0] ?>">Eliminar</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
                     </tr>
                 <?php endforeach; ?>
             <?php endif; ?>
